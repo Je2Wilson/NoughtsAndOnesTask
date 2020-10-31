@@ -1,0 +1,62 @@
+
+////
+/// GENERAL MIXINS
+/// @group General Mixins
+////
+
+//  Background svg mixin
+@mixin background-svg($svg) {
+    background-image: svg-url($svg);
+}
+
+/// ROOT Class
+/// Handled with an "&" at the end of a nested class - might be useful
+@mixin root ($class: "") {
+    @if $class == "ie9" {
+        @at-root .ie9 & {
+            @content;
+        }
+    }
+
+    @else {
+        @at-root #{$class} & {
+            @content;
+        }
+    }
+}
+
+// Got tired of writing it out
+@mixin posab() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// Prefers Reduced Motion
+@mixin reduced-motion($duration: 0.001s) {
+    @media screen and (prefers-reduced-motion: $MEDIA-reduce) {
+        transition-duration: $duration;
+    }
+}
+
+// https://stackoverflow.com/questions/40010597/how-do-i-apply-opacity-to-a-css-color-variable/58662471#58662471
+@mixin defineColorRGB($color-name, $value) {
+    $red: red($value);
+    $green: green($value);
+    $blue: blue($value);
+    #{$color-name}: unquote("rgb(#{$red}, #{$green}, #{$blue})");
+    #{$color-name}-rgb: $red,$green,$blue;
+    #{$color-name}-r: $red;
+    #{$color-name}-g: $green;
+    #{$color-name}-b: $blue;
+}
+
+// FORCE HAS LAYOUT
+// ----------------------------------------------------
+@mixin haslayout {
+    overflow: hidden;
+    _overflow: visible; // HACK
+    zoom: 1; // HACK
+}

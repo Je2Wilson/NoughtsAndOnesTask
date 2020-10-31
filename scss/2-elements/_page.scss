@@ -1,0 +1,28 @@
+////
+/// BODY
+////
+
+// Opinionated page defaults
+// ----------------------------------------------------
+
+body {
+    @include font-family($TYPE-FontFamily, $FONTLOADER-FontFamily, 400);
+    @supports (flex-direction: column) {
+        display: flex;
+        flex-flow: column;
+    }
+    color: $COLOR-Black;
+    margin: 0;
+    line-height: 1.3;
+}
+
+main {
+   // background-color: var(--NM-BlueLight);
+    position: relative;
+    flex: 1 0 auto;
+
+    &:target,
+    &:focus {
+        outline: none;
+    }
+}

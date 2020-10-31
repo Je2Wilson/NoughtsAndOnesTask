@@ -1,0 +1,95 @@
+/// <reference path="../main.scss" />
+
+////
+/// ROOT CSS Vars
+////
+
+:root {
+    //Colours
+    // --red:                 #ff555d;
+    // --black:               #000000;
+    // --white:               #ffffff;
+    --NO-Grey:             #{$COLOR-NO-Grey};
+    --NO-Gold:             #{$COLOR-NO-Gold};
+    --NO-Blue:             #{$COLOR-NO-Blue};
+    --NO-White:            #{$COLOR-NO-White};
+    --NO-Black:            #{$COLOR-NO-Black};
+
+    --CBase:               #{$COLOR-Base};
+
+    --s-xs:          #{rem($S-XS)};
+    --s-sm:          #{rem($S-SM)};
+    --s-md:          #{rem($S-MD)};
+    --s-lg:          #{rem($S-LG)};
+    --s-xl:          #{rem($S-XL)};
+    --s-xxl:         #{rem($S-XXL)};
+
+    // Negative spacing values
+    --s-xs--: calc(var(--s-xs) * -1);
+    --s-sm--: calc(var(--s-sm) * -1);
+    --s-md--: calc(var(--s-md) * -1);
+    --s-lg--: calc(var(--s-lg) * -1);
+    --s-xl--: calc(var(--s-xl) * -1);
+    --s-xxl--: calc(var(--s-xxl) * -1);
+    //Typography font sizes
+    // --f-xs: #{rem($F-XS)};
+    // --f-sm: #{rem($F-SM)};
+    // --f-md: #{rem($F-MD)};
+    // --f-lg: #{rem($F-LG)};
+    // --f-xl: #{rem($F-XL)};
+    --f-9: #{rem($F-9)};
+    --f-8: #{rem($F-8)};
+    --f-7: #{rem($F-7)};
+    --f-6: #{rem($F-6)};
+    --f-5: #{rem($F-5)};
+    --f-4: #{rem($F-4)};
+    --f-3: #{rem($F-3)};
+    --f-2: #{rem($F-2)};
+    --f-1: #{rem($F-1)};
+
+    @media (max-width:799px) {
+        //move these down the show size change
+        --s-xs: #{rem($S-XS)};
+        --s-sm: #{rem($S-XS)};
+        --s-sm: #{rem($S-XS)};
+        --s-md: #{rem($S-SM)};
+        --s-lg: #{rem($S-MD)};
+        --s-xl: #{rem($S-LG)};
+        --s-xxl: #{rem($S-XL)};
+        //Typography font sizes
+        --f-xs: var(--f-xs);
+        --f-sm: var(--f-sm);
+        --f-md: var(--f-md);
+        --f-lg: var(--f-lg);
+        --f-xl: var(--f-xl);
+    }
+
+    --body-font-size: var(--f-xs);
+    --flow-space: var(--s-sm);
+    //wrapping variables
+    // --w-sm:             1366;
+    // --w-md:              908;
+    // --w-lg:             1116;
+    --w-xl: #{rem(1600)};
+
+    @media (max-width:1920px) {
+        // --w-xl:             960;
+    }
+
+    @media (max-width:1366px) {
+        // --w-xl:             960;
+    }
+
+    @media (max-width:1025px) {
+        //  --w-xl:             960;
+    }
+
+    @media (max-width:768px) {
+        // --w-xl:             960;
+    }
+    // New Media Query sizes
+    --md-sm: 768;
+    --md-m: 1024;
+    --md-lg: 1366;
+    --md-xl: 1920;
+}

@@ -1,0 +1,237 @@
+////
+/// VARIABLES
+/// SETUP DEFAULTS
+////
+
+// All these are linked to root variables (after being set here)
+// Sass vars are unitless, cssvars have units (saves calc'ing everywhere)
+
+//Typography font sizes
+
+$F-9:                                   14;
+$F-8:                                   16;
+$F-7:                                   20;
+$F-6:                                   24;
+$F-5:                                   28;
+$F-4:                                   30;
+$F-3:                                   40;
+$F-2:                                   50;
+$F-1:                                   52;
+
+ $TYPE-SIZE-XXXXL:                   48;// XXXXL Omega
+ $TYPE-SIZE-XXXL:                    40;// XXXL Alpha
+ $TYPE-SIZE-XXL:                     36;// XXL Beta
+ $TYPE-SIZE-XL:                      24;// XL Gamma
+ $TYPE-SIZE-L:                       18;// L Delta
+ $TYPE-SIZE-M:                       16;// M Epsilon
+ $TYPE-SIZE-S:                       15;// S Zeta
+ $TYPE-SIZE-XS:                      14;// XS Eta
+ $TYPE-SIZE-XXS:                     12;// XXS Iota
+
+// // These need to be replaced with vars/sass variables above
+// $TYPE-SIZE-7:                    16;
+// $TYPE-SIZE-6:                    24;
+// $TYPE-SIZE-5:                    28;
+// $TYPE-SIZE-4:                    30;
+// $TYPE-SIZE-3:                    40;
+// $TYPE-SIZE-2:                    50;
+// $TYPE-SIZE-1:                    52;
+
+// SPACING
+// ----------------------------------------------------
+ $S-XS:                                  15;
+ $S-SM:                                  32;
+ $S-MD:                                  56;
+ $S-LG:                                  96;
+ $S-XL:                                  125;
+ $S-XXL:                                 224;
+
+$S-1:                                    10;
+$S-2:                                    20;
+$S-3:                                    30;
+$S-4:                                    50;
+$S-5:                                    83;
+$S-6:                                    100;
+
+/// PROJECT COLOURS
+// ----------------------------------------------------
+$COLOR-NO-Grey:                     #6a6a6a;
+$COLOR-NO-White:                    #ffffff;
+$COLOR-NO-Black:                    #000000;
+$COLOR-NO-Blue:                     #151f2a;
+$COLOR-NO-Gold:                     #efc25d;
+
+
+
+/// DEFAULT GLOBAL COLOURS
+// ----------------------------------------------------
+$COLOR-Primary:                         $COLOR-Grey;
+$COLOR-Secondary:                       $COLOR-Blue;
+$COLOR-Tertiary:                        $COLOR-GreyLight;
+$COLOR-Accent:                          $COLOR-Purple;
+$COLOR-Base:                            $COLOR-Grey;//body text
+$COLOR-BaseLight:                       $COLOR-White;
+$COLOR-BaseDark:                        $COLOR-Base;
+
+$STYLE-Select-BgColor:                  $COLOR-Blue;
+$STYLE-Select-TextColor:                $COLOR-White;
+
+// Ensure this has A11y contrast 4.5+ with white background if changed.
+$COLOR-Form-Error-Bg:                   #ffffff;
+$COLOR-Form-Error-Text:                 #d80a49;
+$COLOR-Error:                           #db262b;
+
+
+// GLOBALS
+// ----------------------------------------------------
+$STYLE-BorderRadius:                    12;
+$STYLE-BodyBgColor:                     $COLOR-White;
+
+// ANNIMATION CURVES for transition animation property
+// ----------------------------------------------------
+$ANIM-Curve:					        cubic-bezier(0.4, 0, 0.2, 1);
+$ANIM-Exit:                             cubic-bezier(0, 0, 0.6, 1);
+$ANIM-Entrance:                         cubic-bezier(0.4, 0, 1, 1);
+
+// Z-INDEX
+// ----------------------------------------------------
+$Z-0:				                    0;		// Page
+$Z-1:				                    100;	// Page
+$Z-2:				                    200;	// Page
+$Z-3:				                    300;	// Page
+$Z-4:				                    400;	// Alerts
+$Z-5:				                    500;	// Navigation
+$Z-6:				                    600;	// Header
+$Z-7:				                    700;	// Takeover
+$Z-8:				                    800;	// Flyout
+$Z-9:				                    900;	// Toast
+$Z-10:				                    2000;	// System
+
+// TYPOGRAPHY
+// ----------------------------------------------------
+$TYPE-BaseFontSize:                     16;// Always 16 to match browser-sizing calculations
+$TYPE-FontSize:                         $F-8;// This should match the designers standard paragraph text size. It's applied on root, but we compensate for new value in the grid/media queries
+$TYPE-LineHeight:                       24;
+$TYPE-HeadingsLineHeight:               1.3;
+$TYPE-FONT-Weight:                      400;
+
+// Wide Fonts - Larger x-height, so appear wider and taller
+$TYPE-FONT-SansSerifWide:               Verdana, Geneva, sans-serif;
+$TYPE-FONT-SerifWide:                   Georgia, Utopia, Charter, serif;
+// Narrow Fonts - More traditional, with smaller x-height
+$TYPE-FONT-SansSerifNarrow:             Helvetica, Arial, sans-serif;
+$TYPE-FONT-SerifNarrow:                 'Times New Roman', Times, serif;
+
+$TYPE-FontFamily:                       $TYPE-FONT-SansSerifWide;
+$TYPE-AltFontFamily:                    $TYPE-FONT-SansSerifWide;
+$TYPE-HeadingsFontFamily:               $TYPE-FONT-SansSerifNarrow;
+$TYPE-HeadingsAltFontFamily:            $TYPE-FONT-SansSerifNarrow;
+$TYPE-ScriptFontFamily:                 $TYPE-FONT-SansSerifNarrow;
+$TYPE-ScriptAltFontFamily:              $TYPE-FONT-SansSerifNarrow;
+$TYPE-MonoSpaceFontFamily:              Consolas, monospace;
+$TYPE-CodeFontFamily:                   Monaco, 'Courier New', Courier, monospace, serif;
+
+$TYPE-FontColor:                        $COLOR-Black;
+$TYPE-AltFontColor:                     $TYPE-FontColor;
+$TYPE-HeadingsColor:                    $COLOR-Secondary;
+$TYPE-HeadingsAltColor:                 $TYPE-HeadingsColor;
+$TYPE-ScriptColor:                      $COLOR-Secondary;
+$TYPE-ScriptAltColor:                   $TYPE-ScriptColor;
+
+// LINKS
+// ----------------------------------------------------
+$STYLE-LinkColor-Link:                  $COLOR-Tertiary;
+$STYLE-LinkColor-Visited:               $STYLE-LinkColor-Link;
+$STYLE-LinkColor-Hover:                 $STYLE-LinkColor-Link;
+$STYLE-LinkColor-Focus:                 darken($STYLE-LinkColor-Link, 5);
+$STYLE-LinkColor-Active:                darken($STYLE-LinkColor-Link, 10);
+
+$STYLE-LinkAltColor-Link:               $COLOR-Secondary;
+$STYLE-LinkAltColor-Visited:            $STYLE-LinkAltColor-Link;
+$STYLE-LinkAltColor-Hover:              $STYLE-LinkAltColor-Link;
+$STYLE-LinkAltColor-Focus:              darken($STYLE-LinkAltColor-Link, 5);
+$STYLE-LinkAltColor-Active:             darken($STYLE-LinkAltColor-Link, 10);
+
+$STYLE-LinkOnDarkColor-Link:            $COLOR-White;
+$STYLE-LinkOnDarkColor-Visited:         $STYLE-LinkOnDarkColor-Link;
+$STYLE-LinkOnDarkColor-Hover:           darken($STYLE-LinkOnDarkColor-Link, 5);
+$STYLE-LinkOnDarkColor-Focus:           darken($STYLE-LinkOnDarkColor-Link, 10);
+$STYLE-LinkOnDarkColor-Active:          darken($STYLE-LinkOnDarkColor-Link, 15);
+
+$STYLE-LinkOnLightColor-Link:           $COLOR-Black;
+$STYLE-LinkOnLightColor-Visited:        $STYLE-LinkOnLightColor-Link;
+$STYLE-LinkOnLightColor-Hover:          lighten($STYLE-LinkOnLightColor-Link, 5);
+$STYLE-LinkOnLightColor-Focus:          lighten($STYLE-LinkOnLightColor-Link, 10);
+$STYLE-LinkOnLightColor-Active:         lighten($STYLE-LinkOnLightColor-Link, 15);
+
+// GRID
+// ----------------------------------------------------
+$GRID-InnerWidth:                   1200;
+$GRID-MaxWidth:                     ($GRID-InnerWidth + $S-5 + $S-5);//1366;
+
+$GRID-GutterWidth:                  $S-2;
+$GRID-GutterWidth-Sm:               $S-2;
+$GRID-GutterWidth-Md:               $S-1;
+$GRID-GutterWidth-Lg:               $S-3;
+$GRID-GutterWidth-Xl:               $S-4;
+
+$GRID-GutterHeight:                 $GRID-GutterWidth;
+$GRID-GutterHeight-Sm:              $GRID-GutterWidth-Sm;
+$GRID-GutterHeight-Md:              $GRID-GutterWidth-Md;
+$GRID-GutterHeight-Lg:              $GRID-GutterWidth-Lg;
+$GRID-GutterHeight-Xl:              $GRID-GutterWidth-Xl;
+
+$GRID-Padding:                  0;
+$GRID-Padding-Md:               0;
+$GRID-Padding-Sm:               0;
+
+$GRID-Padding:                  $GRID-GutterWidth / 2;
+$GRID-Padding-Md:               $GRID-GutterWidth-Md / 2;
+$GRID-Padding-Sm:               $GRID-GutterWidth-Sm / 2;
+
+// BREAKPOINTS
+// ----------------------------------------------------
+
+// Pick which breakpoint the nav changes between collapsed and expanded
+// This value is queried by Javscript to toggle nav visibility
+$mq-nav:                                768;
+
+$breakpoints: im-to-em(
+    (
+        'xs': 340px,
+        'sm': 600px,
+        'md': 800px,
+        'lg': 960px,
+        'gridmax': $GRID-MaxWidth * 1px,
+        'xl': 1260px,
+        'xxl': 1900px,
+        'menu-sm': 800px,
+        'menu-md': 1279px,
+        'menu-lg': 1358px,
+        'menu-xl': 1424px,
+        'n-sm': 768px,
+        'n-md': 1024px,
+        'n-lg': 1366px,
+        'n-xl': 1920px
+    )
+);
+
+// PATHS
+// ----------------------------------------------------
+$PATH-Assets:                           "/Assets";
+$PATH-Images:                           "#{$PATH-Assets}/img/";
+$PATH-Fonts:                            "#{$PATH-Assets}/fonts";
+
+// Thing to query the @Supports with
+// If we use the variable, we can globally "remove" flexbox or grid in order to test older browsers
+$SUPPORTS-flex:                         wrap;//@supports (flex-wrap: $SUPPORTS-flex) {...}
+$SUPPORTS-grid:                         grid;//@supports (display: $SUPPORTS-grid) {...}
+$MEDIA-reduce:                          reduce;// no-preference// @media screen and (prefers-reduced-motion: $MEDIA-reduce) {...}
+
+$BOOL-flexsupport:                  true;
+$BOOL-cssgridsupport:               true;
+
+/// Components, Systems & Modules
+/// ----------------------------------------------------
+$SYSTEM-FONTLOADER:                 true;
+$COMPONENT-LINKS:                   true;

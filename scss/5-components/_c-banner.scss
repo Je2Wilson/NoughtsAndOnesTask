@@ -1,0 +1,53 @@
+/// <reference path="../main.scss" />
+
+////
+/// TEMPLATE
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+.c-banner {
+    //
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+.c-banner--home{
+   
+} 
+
+.c-banner__bg {
+    position: absolute;
+    /* object-fit: cover; */ //delete
+    top: 0;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+// object-fit on image (picture element is the container)
+.c-banner__bg img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+}
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, "<=sm") {
+    //
+}
+
+@include media(screen, ">sm", "<=md") {
+    //
+}
+
+@include media(screen, ">md", "<=lg") {
+    //
+}

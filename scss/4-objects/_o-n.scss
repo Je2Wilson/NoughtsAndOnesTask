@@ -1,0 +1,92 @@
+/// <reference path="../main.scss" />
+
+////
+/// O_N Navigation
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+.o-n {
+  
+    
+
+}
+  .o-n__list {
+        display: flex;
+        flex-flow: row wrap;
+        align-items:center;
+        justify-content: flex-end;
+        
+   
+    }
+    .o-n__item {
+        list-style: none;
+     
+        padding-right: var(--s-sm);
+        &:last-child{
+            @include padding-right(0); 
+        }
+       
+    }
+ .o-n__link {
+      
+         text-decoration: none;
+         color: $COLOR-Black;
+         font-size: var(--f-7);
+         &:hover {
+            text-decoration: underline;
+            color: $COLOR-Black;
+         }
+         &:visited{
+            color: $COLOR-Black;
+         }
+         
+    }
+    .o-n__actions{
+        //display: none;
+    
+    }
+// VARIANTS
+// ----------------------------------------------------
+
+.o-n--main {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    @include media(screen, "<=menu-sm") {
+        display: none;
+    }
+    .o-n__list {
+    }
+
+    .o-n__item {
+        
+    }
+
+    .o-n__link {
+        color: $COLOR-White;
+        .isExpanded &{
+             font-weight: bold;
+        }
+      
+    }
+}
+
+
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, "<=menu-sm") {
+    //
+}
+
+@include media(screen, ">menu-sm", "<=menu-md") {
+    //
+}
+
+@include media(screen, ">menu-md", "<=menu-lg") {
+}

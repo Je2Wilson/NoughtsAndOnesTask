@@ -1,0 +1,147 @@
+////
+/// C_BUTTON
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+@mixin c_button(
+    $bg:                var(--NO-Gold),
+    $text:              $COLOR-Black,
+    $bg-hover:          var(--NO-Blue),
+    $text-hover:        $COLOR-White,
+    $padding:           16 30,
+    $icongap:           32,
+    $fontsize:          18,
+    $iconsize:          20,
+    $border-radius:     25px 25px,//5rem // As long as its bigger than height
+    $minwidth:          null,
+    $shadow-color:      $COLOR-Primary,
+    $shadow-depth:      0,
+    $transition:        0.1s ease-out
+    ) {
+
+    min-width: $minwidth;
+    @include link-custom($text, none, $text, none);
+    border-radius: $border-radius;
+    background-color: $bg;
+    text-transform: uppercase;
+ //   @include font-family($TYPE-AltFontFamily, $FONTLOADER-AltFontFamily, 500);
+    transition: all #{$transition};
+    // @include reduced-motion();// Don't forget, this is applied via link-custom mixin as well!
+
+    @if $shadow-depth > 0 {
+        $border-shadow: 1px 1px $shadow-color;
+        @for $i from 2 through $shadow-depth {
+            $border-shadow: #{$border-shadow}, #{$i}px #{$i}px $shadow-color;
+        }
+
+        box-shadow: $border-shadow;
+    }
+
+    // Can't put display:flex on a button element, hence using a child element instead! #A11y
+    .c-button__body {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        //height: 100%;
+        @include padding($padding...);
+
+        // Gap between icon / text / other
+        > *:not(.vh) + * {
+            @include margin-left($icongap);
+        }
+    }
+
+    .c-button__text {
+        display: inline-block;
+        font-size: rem($fontsize);
+        // @include wrap-words-notonletter;
+    }
+
+    .c-icon {
+        @if $iconsize {
+            font-size: rem($iconsize);
+            min-width: rem($iconsize);
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+        background-color: $bg-hover;
+        color: $text-hover;
+        outline: none;
+       
+        .c-button__text { 
+            text-decoration: none;
+        }
+    }
+
+    &[disabled] {
+        background-color: $COLOR-GreyLighter;
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+}
+
+// Strip browser button style to very basic. Any and all buttons must now have a variant - primary, secondary, alt, altprimary, altsecondary etc...
+.c-button {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    padding: 0;
+    text-align: center;// browser default
+    line-height: 1.3;// Overrides normalize
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+.c-button--primary,
+.c-button--secondary,
+.c-button--tertiary,
+.c-button--alt {
+    .c-button__text {
+        @include wrap-words-notonletter;
+    }
+}
+
+.c-button--primary {
+    @include c_button();
+    text-transform: none;
+}
+
+.c-button--secondary{
+    @include c_button($COLOR-White, $COLOR-NO-Grey, $COLOR-NO-Grey, $COLOR-White);
+    @include padding-y(0);
+    border: 1px solid $COLOR-NO-Grey;
+    .c-button__text{
+        text-transform: capitalize;
+    }
+    .c-button__body{
+        @include padding(15);
+    }
+}
+
+
+
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, "<=sm") {
+    //
+}
+
+@include media(screen, ">sm", "<=md") {
+    //
+}
+
+@include media(screen, ">md", "<=lg") {
+    //
+}

@@ -1,0 +1,75 @@
+{
+  "_args": [
+    [
+      "sass-planifolia@0.6.0",
+      "/Users/jammy/Sites/devsnowpack1"
+    ]
+  ],
+  "_development": true,
+  "_from": "sass-planifolia@0.6.0",
+  "_id": "sass-planifolia@0.6.0",
+  "_inBundle": false,
+  "_integrity": "sha512-uSqVl1F9ZiNraMpTXXUT4L3rAPBkXdx7dj1cX8KiQqJzWgAfFWiqAqjXijWBGTdo4Q1qVoF+/pl0QBT3avNCDQ==",
+  "_location": "/sass-planifolia",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "sass-planifolia@0.6.0",
+    "name": "sass-planifolia",
+    "escapedName": "sass-planifolia",
+    "rawSpec": "0.6.0",
+    "saveSpec": null,
+    "fetchSpec": "0.6.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sass-planifolia/-/sass-planifolia-0.6.0.tgz",
+  "_spec": "0.6.0",
+  "_where": "/Users/jammy/Sites/devsnowpack1",
+  "author": {
+    "name": "Tobias Bengfort",
+    "email": "tobias.bengfort@posteo.de"
+  },
+  "bugs": {
+    "url": "https://github.com/xi/sass-planifolia/issues"
+  },
+  "dependencies": {},
+  "description": "Vanilla Sass helper functions",
+  "devDependencies": {
+    "mocha": "^3.5.3",
+    "node-sass": "^4.8.3",
+    "sass-lint": "^1.12.1",
+    "sassaby": "^2.1.1",
+    "sassdoc": "^2.5.0",
+    "sassdoc-theme-default": "git+https://github.com/xi/sassdoc-theme-default.git"
+  },
+  "eyeglass": {
+    "name": "planifolia",
+    "sassDir": "sass",
+    "exports": false,
+    "needs": "^1.0"
+  },
+  "files": [
+    "sass"
+  ],
+  "homepage": "https://github.com/xi/sass-planifolia#readme",
+  "keywords": [
+    "sass",
+    "eyeglass-module"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "sass-planifolia",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xi/sass-planifolia.git"
+  },
+  "scripts": {
+    "docs": "sassdoc sass",
+    "lint": "sass-lint -vq",
+    "test": "mocha"
+  },
+  "version": "0.6.0"
+}

@@ -1,0 +1,105 @@
+////
+/// O_S (Object Stripe)
+///
+// Surrounds an o-w (Object Wrap)
+// Used for adding options like clipping and/or mix-blend modes
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+.o-s {
+    
+    //@include margin-y($S-LG);
+    padding-top:var(--s-md);
+    padding-bottom:var(--s-md);
+    @include media(screen, "<=md") {
+      //  @include  margin-y($S-MD);
+       padding-top:var(--s-sm);
+        padding-bottom:var(--s-sm);
+    }
+  
+}
+
+.o-s__title{
+    color: $COLOR-NO-Blue;
+    font-size:var(--f-3);
+    line-height: 1em; 
+    font-weight: bold;
+}
+
+
+
+.o-s__actions{
+    &.center{
+        text-align: center;
+        margin: auto;
+    }
+    
+}
+
+
+// VARIANTS
+// ----------------------------------------------------
+
+.o-s--header {
+
+    .o-s__wrap{
+         display: flex;
+         flex-flow: row wrap;
+         align-items: center;
+         justify-content: space-between;
+    }
+     .o-s__actions{
+         @include media(screen, "<=n-sm") {
+         //    display: none;
+         }
+        
+     }
+}
+
+
+.o-s--footer {
+
+}
+
+.o-s--banner{
+//  
+}
+
+
+.o-s--two-col-img{
+       
+}
+
+.o-s--grid{
+    .o-s__wrap{
+        margin:auto; 
+        text-align: center;
+    }
+}
+
+.o-s--three-cards{
+    .o-s__section{
+        margin: auto;
+        text-align: center;
+        @include margin-bottom(60);
+    }
+}
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, ">sm", "<=md") {
+    //
+}
+
+@include media(screen, ">md", "<=lg") {
+    //
+}
+
+@include media(screen, ">lg") {
+    //
+}

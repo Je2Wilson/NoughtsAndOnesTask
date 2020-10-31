@@ -1,0 +1,24 @@
+﻿////
+/// ALLOY
+////
+
+// BASE - Order !important
+// ----------------------------------------------------
+
+// Variables and custom variables
+@import "../0-settings/variables";
+
+@import "rootvars";
+
+// Pick a reset/remedy! And don't forget to edit it for lineheights and defaults
+// Combo - JamCow's hand-picked opinionated rules from both
+@import "normalize/combo";
+// @import "normalize/modern-reset";
+// @import "normalize/cssremedy";
+// @import "normalize/cssremedy-reminders";
+
+//@import "fontloader";
+//@import "page";
+//@import "typography";
+//@import "target";
+//@import "js-queries";

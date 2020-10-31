@@ -1,0 +1,270 @@
+
+// Jen Simmons
+// https://github.com/jensimmons/cssremedy
+
+// Global Remedies
+
+// Use border-box by default, globally
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+	scroll-behavior: smooth;
+}
+
+// Consistent line spacing...
+// CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
+html {
+	line-sizing: normal;
+	font-size: 100%;
+	min-height: 100%;
+}
+
+// Remove default padding
+// Remove list styles on ul, ol elements with a class attribute
+// without [class] as we use .rte class to re-add paddings, and this causes inheritance issues
+ul,
+ol {
+	padding: 0;
+	list-style: none;
+}
+
+// Remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,// without [class] as we use .rte class to re-add margins, and this causes inheritance issues with .flow
+ol,// without [class] as we use .rte class to re-add margins, and this causes inheritance issues with .flow
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+form{
+	margin: 0;
+}
+
+// Set core body defaults
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;// possible fix for iOS bug (iOS shortens viewport visually but it's not calculated)
+	
+	
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	overflow-y: scroll;
+	color: var(--CBase);
+
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	position: relative;
+	align-self: stretch;
+}
+
+
+// Headings
+
+// Switch to rem units for headings
+// @@@ Initial values are based on existing browser defaults
+h1 { font-size: var(--f-xl); }
+h2 { font-size: var(--f-lg); }
+h3 { font-size: var(--f-md); }
+h4 { font-size: var(--f-sm); }
+h5 { font-size: var(--f-xs); }
+h6 { font-size: var(--f-xs); }
+
+// Typography
+
+// Default fontsize
+// (because we can't change default on HTML without sitewide calculation implications
+// Overridable in component by changing the variable value eg, `--body-font-size: --F9`
+// This won't change the component fontsize on browsers that don't support variables.
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	@include media(screen, "<=xs") {
+		@include font-size($TYPE-SIZE-S);
+	}
+
+	font-size: var(--body-font-size);
+}
+
+// Overflow by default is bad
+pre { white-space: pre-wrap; }
+
+// 1. Solid, thin horizontal rules
+// 2. Remove Firefox `color: gray`
+// 3. Remove default `1px` height, and common `overflow: hidden`
+
+hr {
+	border-style: solid;
+	border-width: 1px 0 0;
+	color: inherit;
+	height: 0;
+	overflow: visible;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+// JamCow: Seems a good idea
+button {
+	cursor: pointer;
+}
+
+// Embedded Elements
+
+// 1. Block display is usually what we want
+// 2. Remove strange space-below when inline
+// 3. Responsive by default
+
+img, svg, video, canvas, audio, iframe, embed, object {
+	display: block;
+	// vertical-align: middle;
+	max-width: 100%;
+}
+
+// Maintain intrinsic aspect ratios when `max-width` is applied
+// (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+
+img, svg, video, canvas {
+	height: auto;
+}
+
+iframe {
+	border: 1px solid;
+	border-color: inherit;
+}
+
+// SVG reset
+svg {
+	width: 1em;
+	height: 1em;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+// There is no good reason elements default to 300px,
+// and audio files are unlikely to come with a width attribute
+audio { width: 100%; }
+
+// A elements that don't have a class get default styles
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+a {
+	@include link-custom(var(--NM-Black), underline, var(--NM-Black), none);
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
+// Natural flow and rhythm
+
+.flow {
+	--flow-space: var(--s-sm);
+}
+
+.flow > *:not([type="hidden"]) + * {
+	margin-top: var(--flow-space); // default
+}
+
+.flow-1 > *:not([type="hidden"]) + * {
+	margin-top: var(--s-xs);
+}
+
+.flow-2 > *:not([type="hidden"]) + * {
+	margin-top: var(--s-sm);
+}
+
+.flow-3 > *:not([type="hidden"]) + * {
+	margin-top: var(--s-md);
+}
+
+.flow-4 > *:not([type="hidden"]) + * {
+	margin-top: var(--s-lg);
+}
+
+.flow-5 > *:not([type="hidden"]) + * {
+	margin-top: var(--s-xl);
+}
+
+// Old Browsers
+
+// Remove the border on images inside links in IE 10 and earlier
+img { border-style: none; }
+
+// Hide the overflow in IE 10 and earlier
+svg { overflow: hidden; }
+
+// Default block display on HTML5 elements
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+// 1. Add the correct box sizing in IE 10
+// 2. Remove the padding in IE 10
+
+[type='checkbox'],
+[type='radio'] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+// Line Heights
+
+// The default `normal` line-height is tightly spaced, but takes font-metrics into account.
+// Looser spacing may improve readability, but may cause problems in some scripts.
+// See: https://github.com/mozdevs/cssremedy/issues/7
+
+html { line-height: 1.5; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.25; }
+caption, figcaption, label, legend { line-height: 1.375; }
+
+
+// It's about _motion_ so animated opacity is fine (and still looks good).
+@media (prefers-reduced-motion: reduce) {
+	*, ::before, ::after {
+	//   animation-duration: 0.01ms !important;
+	//   animation-iteration-count: 1 !important;
+	//   transition-duration: 0.01ms !important;
+	background-attachment: initial !important;
+	scroll-behavior: auto !important;
+	}
+}
+
+::-moz-selection {
+    background: $STYLE-Select-BgColor;
+    color: $STYLE-Select-TextColor;
+    text-shadow: none;
+}
+
+::selection {
+    background: $STYLE-Select-BgColor;
+    color: $STYLE-Select-TextColor;
+    text-shadow: none;
+}
+
+[hidden] {
+	display: none !important;
+}

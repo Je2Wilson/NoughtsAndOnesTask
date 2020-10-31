@@ -1,0 +1,59 @@
+﻿////
+// CSS3
+////
+
+// TEXT
+// ----------------------------------------------------
+
+@mixin wrap-words {
+    word-break: break-all;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+// Prevents words being broken by letter - IE compatible 
+@mixin wrap-words-notonletter {
+    word-break: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+// TEXT MANIPULTAION
+// ----------------------------------------------------
+
+@mixin text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// text is still read by screen readers
+@mixin hidden-text {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+@mixin unhidden-text {
+    clip: auto;
+    overflow: visible;
+    // border: 0;
+    // height: auto;
+    // width: auto;
+    // margin: 0;
+    // padding: 0;
+    // position: relative;
+}
+
+@mixin truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

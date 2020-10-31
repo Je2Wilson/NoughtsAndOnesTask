@@ -1,0 +1,65 @@
+/// <reference path="../main.scss" />
+
+////
+/// TEMPLATE
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+.c-card {
+    //
+}
+.c-card__title{
+ font-size: $F-5;
+ text-align: center;
+}
+.c-card__body{
+
+}
+.c-card__actions{
+
+}
+
+
+// VARIANTS
+// ----------------------------------------------------
+
+.c-card--triple{
+    @include padding-x(15);
+    @include media(screen, "<=md") {
+        @include margin-y(25);
+    }
+
+    .c-card__title{
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        color: $COLOR-NO-Blue;
+        padding-bottom: 10px;
+       }
+
+       .c-card__body{
+        color: $COLOR-NO-Blue;
+        font-size: $F-3;
+        text-align: center;
+    }
+}
+
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, "<=sm") {
+    //
+}
+
+@include media(screen, ">sm", "<=md") {
+    //
+}
+
+@include media(screen, ">md", "<=lg") {
+    //
+}

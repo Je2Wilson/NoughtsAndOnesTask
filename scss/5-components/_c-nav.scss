@@ -1,0 +1,62 @@
+/// <reference path="../main.scss" />
+
+////
+/// TEMPLATE
+////
+
+/// VARIABLES
+/// ----------------------------------------------------
+
+/// BASE
+/// ----------------------------------------------------
+
+.c-nav {
+  background-color: $COLOR-NO-Blue;
+}
+
+.c-nav__actions {
+   
+}
+// Actions within the nav (not menu)
+.c-nav__actions--open {
+  
+}
+// Actions within the menu
+.c-nav__actions--close {
+}
+
+
+// VARIANTS
+// ----------------------------------------------------
+
+.c-nav--primary{
+    width: 100%;
+}
+
+.c-nav--footer{
+    background-color: $COLOR-GreyLighter;
+    @include margin(0);
+    @include margin-x(20);
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-start;
+    align-items: center;
+    list-style-type: none;
+   
+
+}
+
+// RESPONSIVE
+// ----------------------------------------------------
+
+@include media(screen, "<=sm") {
+    //
+}
+
+@include media(screen, ">sm", "<=md") {
+    //
+}
+
+@include media(screen, ">md", "<=lg") {
+    //
+}
